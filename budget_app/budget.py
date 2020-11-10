@@ -8,23 +8,19 @@ class Category:
         self.ledger = []
 
     def __str__(self):  
-        topLine = '*' * 30
-        topLine = topLine[:15] + self.name + topLine[15:]
-        start = 0 
-        end = len(topLine) + 1
-        while len(topLine) >= 30: 
-            start += 1
-            end -= 1
-            topLine = topLine[start:end]
-        return topLine
 
-
-
-
+        string = self.name.center(30, '*') + '\n'
+        for dic in self.ledger:
+            num = "{:.2f}".format(dic['amount'])
+            des = dic['description'].ljust(30)
+            amt = str(num).rjust(30)
+            lenAmt = 30 - len(str(num))
+            string += des[0:lenAmt - 1] + ' ' + amt[lenAmt:30] + '\n'
+        string += 'Total: ' + str(self.get_balance())
+        return string
         
 
-
-# "*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
+# "deposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
 #         ```
 # *************Food*************
 # initial deposit        1000.00

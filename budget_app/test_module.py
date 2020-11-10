@@ -83,7 +83,7 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected different string representation of object.')
 
     # def test_create_spend_chart(self):
-    #     self.food.deposit(900, "deposit")
+    #     self.food.deposedit(900, "deposit")
     #     self.entertainment.deposit(900, "deposit")
     #     self.business.deposit(900, "deposit")
     #     self.food.withdraw(105.55)
