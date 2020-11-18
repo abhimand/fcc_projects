@@ -1,3 +1,4 @@
+# code is self explanatory
 class Rectangle:
     w = 0
     h = 0
